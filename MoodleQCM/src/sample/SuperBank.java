@@ -22,7 +22,7 @@ public class SuperBank {
 
     public SuperBank() throws ParserConfigurationException {
         dirBank =new File("bank");
-        questionList = new ArrayList();
+        questionList = new ArrayList<String[]>();
         factory = DocumentBuilderFactory.newInstance();
         builder = factory.newDocumentBuilder();
 
@@ -54,12 +54,11 @@ public class SuperBank {
         for (File dir : dirBank.listFiles()){
             if (dir.isDirectory()) xmlInfile(dir);
             if (isXmlFile(dir)){
-
-
+                if (extractQuestion(dir) == null) questionList.add(extractQuestion(dir));
 
             }
         }
-        return null;
+        return questionList;
     }
 
     public boolean isXmlFile(File file) {
@@ -74,15 +73,16 @@ public class SuperBank {
         document = builder.parse(file);
         Element element = document.getDocumentElement();
         NodeList nodeList = element.getChildNodes();
-        for (int i = 0; i < nodeList.getLength(); i++) {
-            if (nodeList.item(i).getNodeName()=="id_header") {
-                nodeId_Header = (Element) nodeList.item(i);
+
+            if (nodeList.item(1).getNodeName()=="id_header") {
+                nodeId_Header = (Element) nodeList.item(1);
                 strings[0]= nodeId_Header.getElementsByTagName("id").item(0).getTextContent();
                 strings[1]=file.getCanonicalPath();
-            }
+                System.out.println(strings[0]);
+                return strings;
 
         }
-        return strings;
+        return null;
     }
 
 

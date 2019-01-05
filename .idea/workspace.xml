@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ad54076-c4a2-498e-9b36-7cce90667b50" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MoodleQCM/bank/fich1.xml" afterPath="$PROJECT_DIR$/MoodleQCM/bank/fich1.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MoodleQCM/src/sample/SuperBank.java" afterPath="$PROJECT_DIR$/MoodleQCM/src/sample/SuperBank.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MoodleQCM/test/SuperBankTest.java" afterPath="$PROJECT_DIR$/MoodleQCM/test/SuperBankTest.java" />
     </list>
@@ -20,36 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MoodleQCM/src/sample/Controller.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sample.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MoodleQCM/src/sample/sample.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="44" lean-forward="false" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SuperBank.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SuperBank.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MoodleQCM/src/sample/SuperBank.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="80" column="50" lean-forward="false" selection-start-line="80" selection-start-column="50" selection-end-line="80" selection-end-column="50" />
+            <state relative-caret-position="258">
+              <caret line="25" column="49" lean-forward="false" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -57,11 +30,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SuperBankTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SuperBankTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MoodleQCM/test/SuperBankTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="40" column="65" lean-forward="false" selection-start-line="40" selection-start-column="65" selection-end-line="40" selection-end-column="65" />
+            <state relative-caret-position="338">
+              <caret line="48" column="54" lean-forward="false" selection-start-line="48" selection-start-column="54" selection-end-line="48" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -103,8 +76,8 @@
         <option value="$PROJECT_DIR$/MoodleQCM/src/sample/sample.fxml" />
         <option value="$PROJECT_DIR$/MoodleQCM/test/TestSuperBank.java" />
         <option value="$PROJECT_DIR$/MoodleQCM/bank/fich1.xml" />
-        <option value="$PROJECT_DIR$/MoodleQCM/src/sample/SuperBank.java" />
         <option value="$PROJECT_DIR$/MoodleQCM/test/SuperBankTest.java" />
+        <option value="$PROJECT_DIR$/MoodleQCM/src/sample/SuperBank.java" />
       </list>
     </option>
   </component>
@@ -153,6 +126,11 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="sample" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="MoodleQCM" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MoodleQCM" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -180,26 +158,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.SuperBankTest.testExtractQuestion">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="sample.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="sample.Main" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="MoodleQCM" />
-      <envs />
-    </configuration>
+  <component name="RunManager" selected="JUnit.SuperBankTest.testXmlInFile">
     <configuration name="SuperBankTest.testBankAsDirectory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="MoodleQCM" />
@@ -268,6 +227,26 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="SuperBankTest" />
       <option name="METHOD_NAME" value="testIsXMLFile" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="SuperBankTest.testXmlInFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="MoodleQCM" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SuperBankTest" />
+      <option name="METHOD_NAME" value="testXmlInFile" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -362,19 +341,19 @@
       <listeners />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.SuperBankTest.testBankAsDirectory" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.SuperBankTest.testHaveDirectory" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.SuperBankTest.testIsXMLFile" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.SuperBankTest.testExtractQuestion" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.SuperBankTest.testBankAsDirectory" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.SuperBankTest.testHaveDirectory" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.SuperBankTest.testIsXMLFile" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.SuperBankTest.testExtractQuestion" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.SuperBankTest.testXmlInFile" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.SuperBankTest.testExtractQuestion" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.SuperBankTest.testIsXMLFile" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.SuperBankTest.testHaveDirectory" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.SuperBankTest.testBankAsDirectory" />
-        <item index="4" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.SuperBankTest.testXmlInFile" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.SuperBankTest.testExtractQuestion" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.SuperBankTest.testIsXMLFile" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.SuperBankTest.testHaveDirectory" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.SuperBankTest.testBankAsDirectory" />
       </list>
     </recent_temporary>
   </component>
@@ -392,35 +371,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SuperBankTest_testExtractQuestion - 2019.01.05 at 15h 08m 37s.xml">
-      <configuration name="SuperBankTest.testExtractQuestion" configurationId="JUnit" />
+    <history-entry file="SuperBankTest_testXmlInFile - 2019.01.05 at 15h 56m 51s.xml">
+      <configuration name="SuperBankTest.testXmlInFile" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SuperBankTest_testExtractQuestion - 2019.01.05 at 15h 09m 08s.xml">
-      <configuration name="SuperBankTest.testExtractQuestion" configurationId="JUnit" />
+    <history-entry file="SuperBankTest_testXmlInFile - 2019.01.05 at 15h 57m 14s.xml">
+      <configuration name="SuperBankTest.testXmlInFile" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SuperBankTest_testExtractQuestion - 2019.01.05 at 15h 10m 53s.xml">
-      <configuration name="SuperBankTest.testExtractQuestion" configurationId="JUnit" />
+    <history-entry file="SuperBankTest_testXmlInFile - 2019.01.05 at 15h 57m 21s.xml">
+      <configuration name="SuperBankTest.testXmlInFile" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SuperBankTest_testExtractQuestion - 2019.01.05 at 15h 11m 04s.xml">
-      <configuration name="SuperBankTest.testExtractQuestion" configurationId="JUnit" />
+    <history-entry file="SuperBankTest_testXmlInFile - 2019.01.05 at 15h 58m 56s.xml">
+      <configuration name="SuperBankTest.testXmlInFile" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SuperBankTest_testExtractQuestion - 2019.01.05 at 15h 11m 21s.xml">
-      <configuration name="SuperBankTest.testExtractQuestion" configurationId="JUnit" />
+    <history-entry file="SuperBankTest_testXmlInFile - 2019.01.05 at 15h 59m 32s.xml">
+      <configuration name="SuperBankTest.testXmlInFile" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SuperBankTest_testExtractQuestion - 2019.01.05 at 15h 14m 58s.xml">
-      <configuration name="SuperBankTest.testExtractQuestion" configurationId="JUnit" />
+    <history-entry file="SuperBankTest_testXmlInFile - 2019.01.05 at 16h 01m 49s.xml">
+      <configuration name="SuperBankTest.testXmlInFile" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SuperBankTest_testExtractQuestion - 2019.01.05 at 15h 17m 31s.xml">
-      <configuration name="SuperBankTest.testExtractQuestion" configurationId="JUnit" />
+    <history-entry file="SuperBankTest_testXmlInFile - 2019.01.05 at 16h 03m 14s.xml">
+      <configuration name="SuperBankTest.testXmlInFile" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SuperBankTest_testExtractQuestion - 2019.01.05 at 15h 21m 13s.xml">
-      <configuration name="SuperBankTest.testExtractQuestion" configurationId="JUnit" />
+    <history-entry file="SuperBankTest_testXmlInFile - 2019.01.05 at 16h 06m 04s.xml">
+      <configuration name="SuperBankTest.testXmlInFile" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SuperBankTest_testExtractQuestion - 2019.01.05 at 15h 21m 29s.xml">
-      <configuration name="SuperBankTest.testExtractQuestion" configurationId="JUnit" />
+    <history-entry file="SuperBankTest_testXmlInFile - 2019.01.05 at 16h 06m 59s.xml">
+      <configuration name="SuperBankTest.testXmlInFile" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SuperBankTest_testExtractQuestion - 2019.01.05 at 15h 26m 45s.xml">
-      <configuration name="SuperBankTest.testExtractQuestion" configurationId="JUnit" />
+    <history-entry file="SuperBankTest_testXmlInFile - 2019.01.05 at 16h 10m 32s.xml">
+      <configuration name="SuperBankTest.testXmlInFile" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -435,7 +414,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -461,7 +440,27 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="9" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/MoodleQCM/src/sample/SuperBank.java</url>
+          <line>76</line>
+          <properties />
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/MoodleQCM/src/sample/SuperBank.java</url>
+          <line>52</line>
+          <properties />
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/MoodleQCM/src/sample/SuperBank.java</url>
+          <line>53</line>
+          <properties />
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="17" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -581,37 +580,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MoodleQCM/src/sample/sample.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="44" lean-forward="false" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MoodleQCM/bank/quiz-Projet_1_CTU-Défaut pour Projet_1_CTU-20190105-1139.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="28" lean-forward="true" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/lang/Object.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/io/File.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="279" column="0" lean-forward="false" selection-start-line="279" selection-start-column="0" selection-end-line="279" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -634,6 +606,98 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/io/File.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="1219" column="0" lean-forward="false" selection-start-line="1219" selection-start-column="0" selection-end-line="1219" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MoodleQCM/src/sample/sample.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="44" lean-forward="false" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/lang/Object.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/util/AbstractCollection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/util/AbstractList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="167" column="0" lean-forward="false" selection-start-line="167" selection-start-column="0" selection-end-line="167" selection-end-column="0" />
+          <folding>
+            <element signature="e#6326#6327#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/runners/BlockJUnit4ClassRunner.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/runner/JUnitCore.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/runners/ParentRunner.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="240" column="0" lean-forward="false" selection-start-line="240" selection-start-column="0" selection-end-line="240" selection-end-column="0" />
+          <folding>
+            <element signature="e#2111#2112#0" expanded="true" />
+            <element signature="e#2155#2156#0" expanded="true" />
+            <element signature="e#5951#6086#0" expanded="true" />
+            <element signature="e#6085#6086#0" expanded="true" />
+            <element signature="e#6484#6648#0" expanded="true" />
+            <element signature="e#6647#6648#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/lang/reflect/InvocationTargetException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="72" column="0" lean-forward="false" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/MoodleQCM/bank/fich1.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -642,20 +706,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MoodleQCM/src/sample/SuperBank.java">
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="80" column="50" lean-forward="false" selection-start-line="80" selection-start-column="50" selection-end-line="80" selection-end-column="50" />
+        <state relative-caret-position="105">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MoodleQCM/test/SuperBankTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="48" column="54" lean-forward="false" selection-start-line="48" selection-start-column="54" selection-end-line="48" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MoodleQCM/test/SuperBankTest.java">
+    <entry file="file://$PROJECT_DIR$/MoodleQCM/src/sample/SuperBank.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="40" column="65" lean-forward="false" selection-start-line="40" selection-start-column="65" selection-end-line="40" selection-end-column="65" />
+        <state relative-caret-position="258">
+          <caret line="25" column="49" lean-forward="false" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

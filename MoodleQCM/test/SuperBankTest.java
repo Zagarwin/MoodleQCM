@@ -39,7 +39,17 @@ public class SuperBankTest {
         strings[1] = "C:\\Users\\Louis Berthier\\Desktop\\Informatique\\L3\\MoodleQCM\\MoodleQCM\\bank\\fich1.xml";
         File file = new File("bank/fich1.xml");
         assertEquals(strings[0],superBank.extractQuestion(file)[0]);
+        assertEquals(strings[1],superBank.extractQuestion(file)[1]);
 
+    }
+    @Test
+    public void testXmlInFile() throws IOException, SAXException {
+        String string = "655656";
+        ArrayList arrayList = superBank.xmlInfile(new File("bank"));
+        System.out.println(arrayList.get(0).toString());
+        String[] strings = (String[]) arrayList.get(0);
+
+        assertEquals(string,strings[0]);
     }
 
 
