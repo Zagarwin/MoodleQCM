@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<!-- question: 0  -->
+  <question type="category">
+    <category>
+        <text>$course$/top</text>
+
+    </category>
+  </question>
+
+<!-- question: 0  -->
+  <question type="category">
+    <category>
+        <text>$course$/top/Défaut pour Projet_1_CTU</text>
+
+    </category>
+  </question>
+
+<!-- question: 95287  -->
+  <question type="multichoice">
+    <name>
+      <text>dgjlkh</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>8*5</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html">
+      <text><![CDATA[<p>Votre réponse est correcte.</p>]]></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text><![CDATA[<p>Votre réponse est partiellement correcte.</p>]]></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text><![CDATA[<p>Votre réponse est incorrecte.</p>]]></text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="-100" format="html">
+      <text><![CDATA[<p>-8</p>]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>vous y étiez presque</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-50" format="html">
+      <text><![CDATA[<p>85</p>]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>bien tenté</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>40</p>]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>bien bien</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 95288  -->
+  <question type="truefalse">
+    <name>
+      <text>Math</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>6 &lt; 5 ?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <answer fraction="0" format="moodle_auto_format">
+      <text>true</text>
+      <feedback format="html">
+        <text><![CDATA[<p>Venez mon bureau s'il vous plaît.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>false</text>
+      <feedback format="html">
+        <text><![CDATA[<p>Bien joué</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+</quiz>
