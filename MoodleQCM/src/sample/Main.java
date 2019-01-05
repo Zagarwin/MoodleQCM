@@ -18,6 +18,9 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
+        Question new_q = new Question("42.xml");
+        System.out.println(new_q.toString());
         launch(args);
     }
+
 }
