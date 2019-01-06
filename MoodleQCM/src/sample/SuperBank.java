@@ -99,9 +99,10 @@ public class SuperBank {
         for (String[] strings : getQuestionList()){
             String s1 = strings[0];
             String s2 = strings[1];
+            System.out.println("S : "+s);
             System.out.println("ID :"+ strings[0]);
             System.out.println("Path :"+ strings[1]);
-            if (s == s1){
+            if (s.equals(strings[0])){
                 return strings[1];
             }
         }

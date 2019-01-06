@@ -58,6 +58,10 @@ public class SuperBankTest {
         assertEquals(string,strings[0]);
     }
     @Test
+    public void testExtractID_PathSize() throws IOException,SAXException{
+        assertEquals(3,superBank.extractId_Path().size());
+    }
+    @Test
     public void testFindId() throws IOException, SAXException {
         superBank.extractId_Path();
 
