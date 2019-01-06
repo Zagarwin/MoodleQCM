@@ -43,13 +43,26 @@ public class SuperBankTest {
 
     }
     @Test
-    public void testXmlInFile() throws IOException, SAXException {
+    public void testExtractId_Path() throws IOException, SAXException {
         String string = "655656";
-        ArrayList arrayList = superBank.xmlInfile(new File("bank"));
-        System.out.println(arrayList.get(0).toString());
+        ArrayList arrayList = superBank.extractId_Path();
         String[] strings = (String[]) arrayList.get(0);
-
         assertEquals(string,strings[0]);
+    }
+    @Test
+    public void testExtractId_Path2() throws IOException, SAXException {
+        String string = "655644";
+        ArrayList arrayList=superBank.extractId_Path();
+        String[] strings = (String[]) arrayList.get(0);
+        System.out.println(strings[0]);
+        assertEquals(string,strings[0]);
+    }
+    @Test
+    public void testFindId() throws IOException, SAXException {
+        superBank.extractId_Path();
+
+        assertEquals("C:\\Users\\Louis Berthier\\Desktop\\Informatique\\L3\\MoodleQCM\\MoodleQCM\\bank\\Maths\\question1.xml",superBank.find("655644"));
+
     }
 
 

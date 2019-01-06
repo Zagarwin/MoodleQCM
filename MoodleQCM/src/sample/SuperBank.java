@@ -49,12 +49,20 @@ public class SuperBank {
         return true;
     }
 
-    public ArrayList xmlInfile(File dirBank) throws IOException, SAXException {
+    public ArrayList extractId_Path() throws IOException, SAXException {
+        return extractId_Path(new File("bank"));
+
+    }
+
+    public ArrayList extractId_Path(File dirBank) throws IOException, SAXException {
         if (!havefiles(dirBank)) return null;
         for (File dir : dirBank.listFiles()){
-            if (dir.isDirectory()) xmlInfile(dir);
+            if (dir.isDirectory()) extractId_Path(dir);
             if (isXmlFile(dir)){
-                if (extractQuestion(dir) == null) questionList.add(extractQuestion(dir));
+                if (extractQuestion(dir) != null){
+                    questionList.add(extractQuestion(dir));
+                }
+
 
             }
         }
@@ -66,6 +74,10 @@ public class SuperBank {
         return false;
     }
 
+    public ArrayList<String[]> getQuestionList() {
+        return questionList;
+    }
+
     public String[] extractQuestion(File file) throws IOException, SAXException {
         ArrayList<String> arrayList = new ArrayList<>();
         String[] strings=new String[2];
@@ -73,18 +85,26 @@ public class SuperBank {
         document = builder.parse(file);
         Element element = document.getDocumentElement();
         NodeList nodeList = element.getChildNodes();
-
             if (nodeList.item(1).getNodeName()=="id_header") {
                 nodeId_Header = (Element) nodeList.item(1);
                 strings[0]= nodeId_Header.getElementsByTagName("id").item(0).getTextContent();
                 strings[1]=file.getCanonicalPath();
-                System.out.println(strings[0]);
                 return strings;
-
         }
         return null;
     }
 
 
-
+    public String find(String s) {
+        for (String[] strings : getQuestionList()){
+            String s1 = strings[0];
+            String s2 = strings[1];
+            System.out.println("ID :"+ strings[0]);
+            System.out.println("Path :"+ strings[1]);
+            if (s == s1){
+                return strings[1];
+            }
+        }
+        return null;
+    }
 }
