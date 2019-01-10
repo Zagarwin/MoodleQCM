@@ -19,20 +19,20 @@ import java.util.Calendar;
 
 
 public class QuestionStorage{
-    private Set<Question> liste_questions;
+    private Set<Question> list_question;
     private String name;
     private SuperBank super_bank;
     private boolean is_bank;
 
 
     public QuestionStorage(boolean is_bank){
-        liste_questions = new HashSet<Question>();
+        list_question = new HashSet<Question>();
         is_bank = is_bank;
         name = "QuestionStorage defaut";
     }
 
     public QuestionStorage(String xml_path, boolean is_bank){
-        liste_questions = new HashSet<Question>();
+        list_question = new HashSet<Question>();
         is_bank = is_bank;
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         try {
@@ -47,7 +47,7 @@ public class QuestionStorage{
             for(int i = 0; i<nbIDsElements; i++) {
                 final Element Id = (Element) list_Id.item(i);
                 Question new_question = super_bank.find(Integer.parseInt(Id.getTextContent()));
-                liste_questions.add(new_question);
+                list_question.add(new_question);
             }
         } catch (ParserConfigurationException e) {
             // TODO Auto-generated catch block
@@ -83,7 +83,7 @@ public class QuestionStorage{
             racine.appendChild(question_id_list);
             name_0.appendChild(document.createTextNode(name));
 
-            for (Question q:liste_questions) {
+            for (Question q:list_question) {
                 final Element question_id = document.createElement("question_id");
                 question_id_list.appendChild(question_id);
                 question_id.appendChild(document.createTextNode(q.getID()+""));
@@ -119,11 +119,11 @@ public class QuestionStorage{
     }
 
     public void addQuestion(Question question){
-        liste_questions.add(question);
+        list_question.add(question);
     }
 
     public void deleteQuestion(Question question){
-        liste_questions.remove(question);
+        list_question.remove(question);
     }
 
 
