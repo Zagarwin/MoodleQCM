@@ -1,11 +1,11 @@
+package sample;
+
 import java.io.File;
 import java.io.IOException;
-
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerFactory;
-
 import org.w3c.dom.Comment;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -18,30 +18,36 @@ import java.util.Calendar;
 
 
 
-class QuestionStorage{
-    private Set<Integer> listeIDs;
-    private String bank_Name;
+public class QuestionStorage{
+    private Set<Question> liste_questions;
+    private String name;
+    private SuperBank super_bank;
+    private boolean is_bank;
 
-    public void QuestionStorage(){
-        listeIDs = new HashSet<Integer>();
-        bank_Name = "Name defaut";
+
+    public QuestionStorage(boolean is_bank){
+        liste_questions = new HashSet<Question>();
+        is_bank = is_bank;
+        name = "QuestionStorage defaut";
     }
 
-    public void QuestionStorage(String strXML){
-        listeIDs = new HashSet<Integer>();
+    public QuestionStorage(String xml_path, boolean is_bank){
+        liste_questions = new HashSet<Question>();
+        is_bank = is_bank;
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         try {
             DocumentBuilder builder = factory.newDocumentBuilder();
-            Document document= builder.parse(new File(strXML));
+            Document document= builder.parse(new File(xml_path));
             Element racine = document.getDocumentElement();
-            Element name = (Element)racine.getElementsByTagName("name");
+            Element name_0 = (Element)racine.getElementsByTagName("name");
 
-            bank_Name = name.getTextContent();
+            name = name_0.getTextContent();
             final NodeList list_Id = racine.getElementsByTagName("question_id_list");
             final int nbIDsElements = list_Id.getLength();
             for(int i = 0; i<nbIDsElements; i++) {
                 final Element Id = (Element) list_Id.item(i);
-                listeIDs.add(Integer.parseInt(Id.getTextContent()));
+                Question new_question = super_bank.find(Integer.parseInt(Id.getTextContent()));
+                liste_questions.add(new_question);
             }
         } catch (ParserConfigurationException e) {
             // TODO Auto-generated catch block
@@ -61,26 +67,26 @@ class QuestionStorage{
 
 
 
-    public void saveBank(String strXML){
+    public void save(String xml_path){
         final DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         try {
             final DocumentBuilder builder = factory.newDocumentBuilder();
-            final Document document = builder.parse(new File(strXML));
+            final Document document = builder.parse(new File(xml_path));
 
             final Element racine = document.createElement("Bank");
             document.appendChild(racine);
             final Comment commentaire = document.createComment("Question Bank");
             racine.appendChild(commentaire);
-            final Element name = document.createElement("name");
+            final Element name_0 = document.createElement("name");
             final Element question_id_list = document.createElement("question_id_list");
-            racine.appendChild(name);
+            racine.appendChild(name_0);
             racine.appendChild(question_id_list);
-            name.appendChild(document.createTextNode(bank_Name));
+            name_0.appendChild(document.createTextNode(name));
 
-            for (int i:listeIDs) {
+            for (Question q:liste_questions) {
                 final Element question_id = document.createElement("question_id");
                 question_id_list.appendChild(question_id);
-                question_id.appendChild(document.createTextNode(i+""));
+                question_id.appendChild(document.createTextNode(q.getID()+""));
     		}
             Calendar c = Calendar.getInstance();
             final Element date = document.createElement("date");
@@ -100,15 +106,33 @@ class QuestionStorage{
 
     }
 
+    public void affichage(){
 
+    }
 
-    public void addQuestion(int id_question){
-        listeIDs.add(id_question);
+    public void Import(String xml_path){
+
+    }
+
+    public void Export(String xml_path){
+
+    }
+
+    public void addQuestion(Question question){
+        liste_questions.add(question);
+    }
+
+    public void deleteQuestion(Question question){
+        liste_questions.remove(question);
     }
 
 
-    public void changeName(String new_name){
-        bank_Name = new_name;
+    public void changeName(String name_0){
+        name = name_0;
+    }
+
+    public String getName(){
+        return name;
     }
 
 
