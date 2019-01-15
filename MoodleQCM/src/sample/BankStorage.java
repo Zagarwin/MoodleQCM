@@ -1,5 +1,4 @@
-package main.java.sample;
-
+package sample;
 
 import java.io.File;
 import java.io.IOException;
@@ -18,23 +17,17 @@ import java.util.Set;
 import java.util.Calendar;
 
 
-
-public class QuestionStorage{
-    private Set<Question> list_question;
+public class BankStorage{
     private String name;
-    private SuperBank super_bank;
-    private boolean is_bank;
+    private Set<QuestionStorage> list_bank;
 
-
-    public QuestionStorage(boolean is_bank){
-        list_question = new HashSet<Question>();
-        is_bank = is_bank;
-        name = "QuestionStorage defaut";
+    public BankStorage(){
+        list_bank = new HashSet<QuestionStorage>();
+        name = "BankStorage Defaut";
     }
 
-    public QuestionStorage(String xml_path, boolean is_bank){
-        list_question = new HashSet<Question>();
-        is_bank = is_bank;
+    public BankStorage(String xml_path){
+        list_bank = new HashSet<QuestionStorage>();
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         try {
             DocumentBuilder builder = factory.newDocumentBuilder();
@@ -43,12 +36,12 @@ public class QuestionStorage{
             Element name_0 = (Element)racine.getElementsByTagName("name");
 
             name = name_0.getTextContent();
-            final NodeList list_Id = racine.getElementsByTagName("question_id_list");
-            final int nbIDsElements = list_Id.getLength();
-            for(int i = 0; i<nbIDsElements; i++) {
-                final Element Id = (Element) list_Id.item(i);
-                Question new_question = super_bank.find(Integer.parseInt(Id.getTextContent()));
-                list_question.add(new_question);
+            final NodeList list_bank_0 = racine.getElementsByTagName("bank_list");
+            final int nb_banks_Elements = list_bank_0.getLength();
+            for(int i = 0; i<nb_banks_Elements; i++) {
+                final Element name_qs = (Element) list_bank_0.item(i);
+                QuestionStorage qs = new QuestionStorage(name_qs.getTextContent(), true);
+                list_bank.add(qs);
             }
         } catch (ParserConfigurationException e) {
             // TODO Auto-generated catch block
@@ -60,11 +53,8 @@ public class QuestionStorage{
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+
     }
-
-
-
-
 
 
 
@@ -74,21 +64,21 @@ public class QuestionStorage{
             final DocumentBuilder builder = factory.newDocumentBuilder();
             final Document document = builder.parse(new File(xml_path));
 
-            final Element racine = document.createElement("Bank");
+            final Element racine = document.createElement("BS");
             document.appendChild(racine);
-            final Comment commentaire = document.createComment("Question Bank");
+            final Comment commentaire = document.createComment("List Bank");
             racine.appendChild(commentaire);
             final Element name_0 = document.createElement("name");
-            final Element question_id_list = document.createElement("question_id_list");
+            final Element bank_name_list = document.createElement("bank_list");
             racine.appendChild(name_0);
-            racine.appendChild(question_id_list);
+            racine.appendChild(bank_name_list);
             name_0.appendChild(document.createTextNode(name));
 
-            for (Question q:list_question) {
-                final Element question_id = document.createElement("question_id");
-                question_id_list.appendChild(question_id);
-                question_id.appendChild(document.createTextNode(q.getID()+""));
-    		}
+            for (QuestionStorage qs:list_bank) {
+                final Element bank = document.createElement("bank");
+                bank_name_list.appendChild(bank);
+                bank.appendChild(document.createTextNode(qs.getName()));
+            }
             Calendar c = Calendar.getInstance();
             final Element date = document.createElement("date");
             racine.appendChild(date);
@@ -96,44 +86,28 @@ public class QuestionStorage{
 
         }
         catch (final ParserConfigurationException e) {
-	        e.printStackTrace();
-    	}
+            e.printStackTrace();
+        }
         catch(final SAXException e) {
             e.printStackTrace();
         }
         catch(final IOException e) {
             e.printStackTrace();
         }
-
     }
-
-    public void affichage(){
-
-    }
-
-    public void Import(String xml_path){
-
-    }
-
-    public void Export(String xml_path){
-
-    }
-
-    public void addQuestion(Question question){
-        list_question.add(question);
-    }
-
-    public void deleteQuestion(Question question){
-        list_question.remove(question);
-    }
-
 
     public void changeName(String name_0){
         name = name_0;
     }
 
-    public String getName(){
-        return name;
+
+    public void addBank(QuestionStorage qs_0){
+        list_bank.add(qs_0);
+    }
+
+
+    public void deleteBank(QuestionStorage qs_0){
+        list_bank.remove(qs_0);
     }
 
 
