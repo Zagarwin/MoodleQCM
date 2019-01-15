@@ -1,3 +1,5 @@
+package main.java.sample;
+
 import java.io.File;
 import java.io.IOException;
 

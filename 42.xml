@@ -1,0 +1,53 @@
+<question_data>
+<id_header>
+    <id>42</id>
+    <name>
+        <text>kamoulox</text>
+    </name>
+</id_header>
+<question type="multichoice">
+    <name>
+      <text>kamoulox</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>8*5</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html">
+      <text><![CDATA[<p>Votre réponse est correcte.</p>]]></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text><![CDATA[<p>Votre réponse est partiellement correcte.</p>]]></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text><![CDATA[<p>Votre réponse est incorrecte.</p>]]></text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="-100" format="html">
+      <text><![CDATA[<p>-8</p>]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>vous y étiez presque</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-50" format="html">
+      <text><![CDATA[<p>85</p>]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>bien tenté</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>40</p>]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>bien bien</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+  </question_data>

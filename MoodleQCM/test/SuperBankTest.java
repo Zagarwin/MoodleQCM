@@ -1,7 +1,7 @@
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.jupiter.api.BeforeAll;
-import sample.SuperBank;
+//import org.junit.jupiter.api.BeforeAll;
+import main.java.sample.SuperBank;
 
 import java.io.File;
 import java.util.ArrayList;
