@@ -1,5 +1,7 @@
-package main.java.sample;
+package sample;
 
+import main.java.sample.Answer;
+import main.java.sample.WrongQuestionTypeException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;

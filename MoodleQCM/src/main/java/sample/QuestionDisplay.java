@@ -1,5 +1,7 @@
 package main.java.sample;
 
+import sample.Question;
+
 public class QuestionDisplay {
     private int id;
     private String name;

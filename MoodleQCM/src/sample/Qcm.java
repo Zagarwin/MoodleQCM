@@ -6,6 +6,8 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerFactory;
+
+import main.java.sample.QuestionStorage;
 import org.w3c.dom.Comment;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -18,7 +20,7 @@ import java.util.Calendar;
 
 
 
-public class Qcm extends QuestionStorage{
+public class Qcm extends QuestionStorage {
     // private static int name_default_nomber = 0;
 
     public Qcm(){
