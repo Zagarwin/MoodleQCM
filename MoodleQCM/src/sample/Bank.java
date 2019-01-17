@@ -15,24 +15,34 @@ import org.xml.sax.SAXException;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.Calendar;
+import main.java.sample.QuestionStorage;
+
 
 
 
 public class Bank extends QuestionStorage{
     // private static int name_default_nomber = 0;
+    private static int number_default = 0;
+
+
 
     public Bank(){
         super();
+        path = "./Bank_default"+number_default+".xml";
         // changeName("Qcm defaut" + name_default_nomber);
         // name_default_nomber++;
     }
 
-    public save(String xml_path){
-        super(xml_path, true);
+    public Bank(String path){
+        super(path);
+    }
+
+    public void save(){
+        super.save(true);
     }
 
     public void Export(String xml_path, String name_for_xml, boolean isBank){
-        super(xml_path, name_for_xml, true);
+        super.Export(xml_path, name_for_xml, true);
     }
 
 

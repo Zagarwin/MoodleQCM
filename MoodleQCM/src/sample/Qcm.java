@@ -17,6 +17,8 @@ import org.xml.sax.SAXException;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.Calendar;
+import main.java.sample.QuestionStorage;
+
 
 
 
@@ -29,12 +31,16 @@ public class Qcm extends QuestionStorage {
         // name_default_nomber++;
     }
 
-    public save(String xml_path){
-        super(xml_path, false);
+    public Qcm(String path){
+        super(path);
+    }
+
+    public void save(){
+        super.save(false);
     }
 
     public void Export(String xml_path, String name_for_xml, boolean isBank){
-        super(xml_path, name_for_xml, false);
+        super.Export(xml_path, name_for_xml, false);
     }
 
 
