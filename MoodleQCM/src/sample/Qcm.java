@@ -23,6 +23,7 @@ import main.java.sample.QuestionStorage;
 
 
 public class Qcm extends QuestionStorage {
+    private String path;
     // private static int name_default_nomber = 0;
 
     public Qcm(){
@@ -44,5 +45,7 @@ public class Qcm extends QuestionStorage {
     }
 
 
-
+    public String getPath() {
+        return path;
+    }
 }

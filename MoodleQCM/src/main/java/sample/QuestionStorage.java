@@ -13,6 +13,8 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
+import sample.Question;
+
 import java.util.HashSet;
 import java.util.Set;
 import java.util.Calendar;
@@ -45,9 +47,9 @@ public class QuestionStorage{
             name = name_0.getTextContent();
             final NodeList list_Id = racine.getElementsByTagName("question_id_list");
             final int nbIDsElements = list_Id.getLength();
-            for(int i = 0; i<nbIDsElements; i++) {
+            for(int i =  0; i<nbIDsElements; i++) {
                 final Element Id = (Element) list_Id.item(i);
-                Question new_question = super_bank.find(Integer.parseInt(Id.getTextContent()));
+                Question new_question = super_bank.findQuestion(Id.getTextContent());
                 list_question.add(new_question);
             }
         } catch (ParserConfigurationException e) {
@@ -58,6 +60,8 @@ public class QuestionStorage{
             e.printStackTrace();
         } catch (IOException e) {
             // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (WrongQuestionTypeException e) {
             e.printStackTrace();
         }
     }

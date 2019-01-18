@@ -213,4 +213,8 @@ public class Question {
 
         loaded = true;
     }
+
+    public int getID() {
+        return id;
+    }
 }

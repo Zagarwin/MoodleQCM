@@ -13,19 +13,18 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Objects;
 
 
 public class SuperBank {
     private File dirBank;
     private ArrayList<String[]> questionList;
-    private DocumentBuilderFactory factory;
     private DocumentBuilder builder;
-    private Document document;
 
     public SuperBank() throws ParserConfigurationException {
         dirBank =new File("bank");
-        questionList = new ArrayList<String[]>();
-        factory = DocumentBuilderFactory.newInstance();
+        questionList = new ArrayList<>();
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         builder = factory.newDocumentBuilder();
 
     }
@@ -36,16 +35,10 @@ public class SuperBank {
 
 
     public boolean havefiles() {
-        if (dirBank.listFiles().length==0){
-            return false;
-        }
-        return true;
+        return dirBank.listFiles().length != 0;
     }
-    public boolean havefiles(File dir){
-        if (dir.listFiles().length==0){
-            return false;
-        }
-        return true;
+    private boolean havefiles(File dir){
+        return dir.listFiles().length != 0;
     }
 
     public ArrayList extractId_Path() throws IOException, SAXException {
@@ -53,7 +46,7 @@ public class SuperBank {
 
     }
 
-    public ArrayList extractId_Path(File dirBank) throws IOException, SAXException {
+    private ArrayList extractId_Path(File dirBank) throws IOException, SAXException {
         if (!havefiles(dirBank)) return null;
         for (File dir : dirBank.listFiles()){
             if (dir.isDirectory()) extractId_Path(dir);
@@ -69,22 +62,20 @@ public class SuperBank {
     }
 
     public boolean isXmlFile(File file) {
-        if (file.isFile() && file.getName().contains(".xml")) return true;
-        return false;
+        return file.isFile() && file.getName().contains(".xml");
     }
 
-    public ArrayList<String[]> getQuestionList() {
+    private ArrayList<String[]> getQuestionList() {
         return questionList;
     }
 
     public String[] extractQuestion(File file) throws IOException, SAXException {
-        ArrayList<String> arrayList = new ArrayList<>();
         String[] strings=new String[2];
         Element nodeId_Header;
-        document = builder.parse(file);
+        Document document = builder.parse(file);
         Element element = document.getDocumentElement();
         NodeList nodeList = element.getChildNodes();
-        if (nodeList.item(1).getNodeName()=="id_header") {
+        if (Objects.equals(nodeList.item(1).getNodeName(), "id_header")) {
             nodeId_Header = (Element) nodeList.item(1);
             strings[0]= nodeId_Header.getElementsByTagName("id").item(0).getTextContent();
             strings[1]=file.getCanonicalPath();
@@ -96,8 +87,6 @@ public class SuperBank {
 
     public String find(String s) {
         for (String[] strings : getQuestionList()){
-            String s1 = strings[0];
-            String s2 = strings[1];
             System.out.println("S : "+s);
             System.out.println("ID :"+ strings[0]);
             System.out.println("Path :"+ strings[1]);
@@ -112,7 +101,7 @@ public class SuperBank {
     }
 
     public TreeItem<String> generateTree() throws IOException, SAXException {
-        TreeItem<String> root = new TreeItem<String>();
+        TreeItem<String> root = new TreeItem<>();
         root.setExpanded(true);
         for(File file : dirBank.listFiles()){
             if (file.isDirectory()){
@@ -120,7 +109,7 @@ public class SuperBank {
             }
             if (isXmlFile(file) && extractQuestion(file)!=null){
                 String[] strings = extractQuestion(file);
-                TreeItem<String> treeItem = new TreeItem<String>(strings[1]);
+                TreeItem<String> treeItem = new TreeItem<>(strings[1]);
                 root.getChildren().addAll(treeItem);
             }
         }
@@ -128,7 +117,7 @@ public class SuperBank {
     }
 
     private TreeItem<String> generateItem(File file) throws IOException, SAXException {
-        TreeItem<String> treeItem = new TreeItem<String>(file.getName());
+        TreeItem<String> treeItem = new TreeItem<>(file.getName());
         for (File file1 : file.listFiles()) {
             if (file1.isDirectory()){
                 treeItem.getChildren().addAll(generateItem(file1));
