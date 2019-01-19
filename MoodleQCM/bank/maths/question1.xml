@@ -1,13 +1,13 @@
 <question_data>
     <id_header>
-        <id>fich1</id>
+        <id>question1</id>
         <name>
-            <text>fich1</text>
+            <text>question1</text>
         </name>
     </id_header>
     <question type="multichoice">
         <name>
-            <text>fich1</text>
+            <text>question1</text>
         </name>
         <questiontext format="html">
             <text><![CDATA[<p>8*5</p>]]></text>

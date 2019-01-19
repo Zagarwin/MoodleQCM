@@ -6,3 +6,8 @@ MoodleQCM/.idea/modules.xml
 MoodleQCM/.idea/workspace.xml
 MoodleQCM/.idea/workspace.xml
 MoodleQCM/.idea/workspace.xml
+MoodleQCM/MoodleQCM.iml
+MoodleQCM/target/classes/main/java/sample/Answer.class
+*.class
+MoodleQCM/target/classes/sample/Question.class
+MoodleQCM/target/classes/sample/QcmStorage.class
