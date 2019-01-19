@@ -1,4 +1,4 @@
-package sample;
+package main.java.sample;
 
 import main.java.sample.Answer;
 import main.java.sample.WrongQuestionTypeException;
@@ -29,14 +29,13 @@ public class Question {
     private int hidden;
     private String name, questiontext, generalfeedback, correctfeedback, partiallycorrectfeedback, incorrectfeedback;
     private String qt_format, gf_format, cf_format, pcf_format, if_format;
-    private String answeringnumbering;
+    private String answernumbering;
     private double defaultgrade;
     private double penalty;
 
     private List<Answer> answers;
 
     public Question(String path) throws WrongQuestionTypeException {
-        answers = new ArrayList<>();
         loaded = false;
         init(path);
     }
@@ -50,7 +49,7 @@ public class Question {
         str += correctfeedback + "\n";
         str += partiallycorrectfeedback + "\n";
         str += incorrectfeedback + "\n";
-        str += answeringnumbering + "\n";
+        str += answernumbering + "\n";
         str += defaultgrade + "\n";
         str += penalty + "\n";
         int i = 0;
@@ -67,10 +66,100 @@ public class Question {
     }
 
     public Element getQuestionXml() {
-        return null;
+
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+
+        Element root = null;
+
+        try {
+            DocumentBuilder builder = factory.newDocumentBuilder();
+            Document document= builder.newDocument();
+
+            /////////////////////
+            root = document.createElement("question");
+
+            Element x_questiontext = document.createElement("questiontext");
+             x_questiontext.setAttribute("format", qt_format);
+            Element questiontext_content = document.createElement("text");
+            questiontext_content.appendChild(document.createTextNode(questiontext));
+            x_questiontext.appendChild(questiontext_content);
+            root.appendChild(x_questiontext);   //Write QuestionText
+
+            Element x_generalfeeback = document.createElement("generalfeedback");
+            x_generalfeeback.setAttribute("format", gf_format);
+            Element generalfeedback_content = document.createElement("text");
+            generalfeedback_content.appendChild(document.createTextNode(generalfeedback));
+            x_generalfeeback.appendChild(generalfeedback_content);
+            root.appendChild(x_generalfeeback);  //Write GeneralFeedback
+
+            Element x_correctfeeback = document.createElement("correctfeedback");
+            x_correctfeeback.setAttribute("format", cf_format);
+            Element correctfeedback_content = document.createElement("text");
+            correctfeedback_content.appendChild(document.createTextNode(correctfeedback));
+            x_correctfeeback.appendChild(correctfeedback_content);
+            root.appendChild(x_correctfeeback);  //Write CorrectFeedback
+
+            Element x_partiallycorrectfeeback = document.createElement("partiallycorrectfeedback");
+            x_partiallycorrectfeeback.setAttribute("format", pcf_format);
+            Element partiallycorrectfeedback_content = document.createElement("text");
+            partiallycorrectfeedback_content.appendChild(document.createTextNode(partiallycorrectfeedback));
+            x_partiallycorrectfeeback.appendChild(partiallycorrectfeedback_content);
+            root.appendChild(x_partiallycorrectfeeback);  //Write PartiallyCorrectFeedback
+
+            Element x_incorrectfeeback = document.createElement("incorrectfeedback");
+            x_incorrectfeeback.setAttribute("format", if_format);
+            Element incorrectfeedback_content = document.createElement("text");
+            incorrectfeedback_content.appendChild(document.createTextNode(incorrectfeedback));
+            x_incorrectfeeback.appendChild(incorrectfeedback_content);
+            root.appendChild(x_incorrectfeeback);  //Write InCorrectFeedback
+
+
+            Element defaultgrade_content = document.createElement("defaultgrade");
+            defaultgrade_content.appendChild(document.createTextNode(Double.toString(defaultgrade)));
+            root.appendChild(defaultgrade_content);
+
+            Element penalty_content = document.createElement("penalty");
+            penalty_content.appendChild(document.createTextNode(Double.toString(penalty)));
+            root.appendChild(penalty_content);
+
+            Element hidden_content = document.createElement("hidden");
+            hidden_content.appendChild(document.createTextNode(Integer.toString(hidden)));
+            root.appendChild(hidden_content);
+
+            Element single_content = document.createElement("single");
+            single_content.appendChild(document.createTextNode(Boolean.toString(single)));
+            root.appendChild(single_content);
+
+            Element answernumbering_content = document.createElement("answernumbering");
+            answernumbering_content.appendChild(document.createTextNode(answernumbering));
+            root.appendChild(answernumbering_content);
+
+            for (Answer ans : answers) {
+                Element answer = document.createElement("answer");
+                answer.setAttribute("fraction", Double.toString(ans.getFraction()));
+                answer.setAttribute("format", ans.getTextFormat());
+                Element text = document.createElement("text");
+                text.appendChild(document.createTextNode(ans.getText()));
+                answer.appendChild(text);
+                Element feedback = document.createElement("feedback");
+                feedback.setAttribute("format", ans.getFeedbackFormat());
+                Element f_text = document.createElement("text");
+                f_text.appendChild(document.createTextNode(ans.getFeedback()));
+                feedback.appendChild(f_text);
+                answer.appendChild(feedback);
+
+                root.appendChild(answer);
+            }
+
+        }
+        catch (final ParserConfigurationException e) {
+            e.printStackTrace();
+        }
+
+        return root;
     }
 
-    public void save() {
+    public void save(String xml_path) {
 
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 
@@ -96,7 +185,7 @@ public class Question {
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
             DOMSource source = new DOMSource(document);
-            StreamResult sortie = new StreamResult(new File(" ... "));   //TODO: relier à getPath de Louis
+            StreamResult sortie = new StreamResult(new File(xml_path));
             transformer.setOutputProperty(OutputKeys.VERSION,"1.0");
             transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
             transformer.setOutputProperty(OutputKeys.STANDALONE, "yes");
@@ -145,11 +234,13 @@ public class Question {
         }
     }
 
-    public void load(String xml_path) {  //ne devra pas prendre de paramètre
+    public void load(String xml_path) {
 
         if (loaded) {
             return;
         }
+
+        answers = new ArrayList<>();
 
         final DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 
@@ -185,7 +276,7 @@ public class Question {
             penalty = Double.parseDouble(x_question.getElementsByTagName("penalty").item(0).getTextContent());
             hidden = Integer.parseInt(x_question.getElementsByTagName("hidden").item(0).getTextContent());
             single = Boolean.parseBoolean(x_question.getElementsByTagName("single").item(0).getTextContent());
-            answeringnumbering = x_question.getElementsByTagName("answernumbering").item(0).getTextContent();
+            answernumbering = x_question.getElementsByTagName("answernumbering").item(0).getTextContent();
 
             NodeList x_answers = x_question.getElementsByTagName("answer");
             int answers_nb = x_answers.getLength();
