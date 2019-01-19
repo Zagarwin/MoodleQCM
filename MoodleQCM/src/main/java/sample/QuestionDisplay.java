@@ -1,6 +1,6 @@
 package main.java.sample;
 
-import sample.Question;
+import main.java.sample.Question;
 
 public class QuestionDisplay {
     private int id;

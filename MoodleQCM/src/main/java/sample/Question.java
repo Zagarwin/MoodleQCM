@@ -41,6 +41,9 @@ public class Question {
     }
 
     public String toString() {
+        if (!loaded) {
+            return "Name: " + name + " Id: " + Integer.toString(id);
+        }
         String str = "";
         str += "id: " + id + " single: " + single + " shuffleanswers: " + shuffleanswers + " hidden: " + hidden + "\n";
         str += name + "\n";
@@ -79,7 +82,7 @@ public class Question {
             root = document.createElement("question");
 
             Element x_questiontext = document.createElement("questiontext");
-             x_questiontext.setAttribute("format", qt_format);
+            x_questiontext.setAttribute("format", qt_format);
             Element questiontext_content = document.createElement("text");
             questiontext_content.appendChild(document.createTextNode(questiontext));
             x_questiontext.appendChild(questiontext_content);
@@ -309,3 +312,4 @@ public class Question {
         return id;
     }
 }
+
