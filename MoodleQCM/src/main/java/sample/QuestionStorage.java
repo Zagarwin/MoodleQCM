@@ -21,9 +21,9 @@ import java.util.Calendar;
 
 
 
-public Abstract class QuestionStorage{
+public abstract class QuestionStorage{
     private Set<Question> list_question;
-    private String name;
+    private String name, path;
     private SuperBank super_bank;
 
 
@@ -34,6 +34,7 @@ public Abstract class QuestionStorage{
     }
 
     public QuestionStorage(String xml_path){
+        path = xml_path;
         list_question = new HashSet<Question>();
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         try {
@@ -70,11 +71,11 @@ public Abstract class QuestionStorage{
 
 
 
-    public void save(String xml_path, boolean isBank){
+    public void save(boolean isBank){
         final DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         try {
             final DocumentBuilder builder = factory.newDocumentBuilder();
-            final Document document = builder.parse(new File(xml_path));
+            final Document document = builder.parse(new File(path));
             Element racine = null;
             Comment commentaire = null;
             if(isBank){
@@ -175,8 +176,8 @@ public Abstract class QuestionStorage{
 
             for (Question q:list_question) {
                 final Element question = document.createElement("question");
-                question_list.appendChild(question);
-                question.appendChild(document.createTextNode(q.getQuestionXml()));           //Question getter pour Exporter
+                question_list.appendChild(q.getQuestionXml());
+//                question.appendChild(document.createTextNode(q.getQuestionXml()));           //Question getter pour Exporter
             }
             Calendar c = Calendar.getInstance();
             final Element date = document.createElement("date");
@@ -211,6 +212,11 @@ public Abstract class QuestionStorage{
 
     public String getName(){
         return name;
+    }
+
+
+    public String getPath(){
+        return path;
     }
 
 
