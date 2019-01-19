@@ -28,7 +28,7 @@ public class Bank extends QuestionStorage{
 
     public Bank(){
         super();
-        path = "./Bank_default"+number_default+".xml";
+        //path = "./Bank_default"+number_default+".xml";
         // changeName("Qcm defaut" + name_default_nomber);
         // name_default_nomber++;
     }
