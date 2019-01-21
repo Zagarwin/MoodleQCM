@@ -1,36 +1,34 @@
-package sample;
+package main.java.sample;
 
 import java.io.File;
 import java.io.IOException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.TransformerFactory;
+
 import org.w3c.dom.Comment;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 import java.util.HashSet;
 import java.util.Set;
-import sample.Bank;
 import java.util.Calendar;
 
 
 
-public class BankStorage{
+public class QcmStorage{
     private String name, path;
-    private Set<Bank> list_bank;
+    private Set<Qcm> list_qcm;
 
-    public BankStorage(){
-        list_bank = new HashSet<Bank>();
-        name = "BankStorage Defaut";
+    public QcmStorage(){
+        list_qcm = new HashSet<Qcm>();
+        name = "QcmStorage Defaut";
     }
 
-    public BankStorage(String xml_path){
+    public QcmStorage(String xml_path){
         path = xml_path;
-        list_bank = new HashSet<Bank>();
+        list_qcm = new HashSet<Qcm>();
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         try {
             DocumentBuilder builder = factory.newDocumentBuilder();
@@ -39,13 +37,13 @@ public class BankStorage{
             Element name_0 = (Element)racine.getElementsByTagName("name");
 
             name = name_0.getTextContent();
-            final NodeList list_bank_0 = racine.getElementsByTagName("bank_list");
-            final int nb_banks_Elements = list_bank_0.getLength();
-            for(int i = 0; i<nb_banks_Elements; i++) {
-                final Element bank = (Element) list_bank_0.item(i);
-                final Element path_bank = (Element) bank.getElementsByTagName("bank_path");
-                Bank b = new Bank(path_bank.getTextContent());
-                list_bank.add(b);
+            final NodeList list_qcm_0 = racine.getElementsByTagName("qcm_list");
+            final int nb_qcms_Elements = list_qcm_0.getLength();
+            for(int i = 0; i<nb_qcms_Elements; i++) {
+                final Element qcm = (Element) list_qcm_0.item(i);
+                final Element path_qcm = (Element) qcm.getElementsByTagName("qcm_path");
+                Qcm q = new Qcm(path_qcm.getTextContent());
+                list_qcm.add(q);
             }
         } catch (ParserConfigurationException e) {
             // TODO Auto-generated catch block
@@ -62,31 +60,31 @@ public class BankStorage{
 
 
 
-    public void save(String xml_path){
+    public void save(){
         final DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         try {
             final DocumentBuilder builder = factory.newDocumentBuilder();
-            final Document document = builder.parse(new File(xml_path));
+            final Document document = builder.parse(new File(path));
 
-            final Element racine = document.createElement("BS");
+            final Element racine = document.createElement("QS");
             document.appendChild(racine);
-            final Comment commentaire = document.createComment("List Bank");
+            final Comment commentaire = document.createComment("List Qcm");
             racine.appendChild(commentaire);
             final Element name_0 = document.createElement("name");
-            final Element bank_name_list = document.createElement("bank_list");
+            final Element qcm_name_list = document.createElement("qcm_list");
             racine.appendChild(name_0);
-            racine.appendChild(bank_name_list);
+            racine.appendChild(qcm_name_list);
             name_0.appendChild(document.createTextNode(name));
 
-            for (Bank bk:list_bank) {
-                final Element bank = document.createElement("bank");
-                bank_name_list.appendChild(bank);
-                final Element bank_name = document.createElement("bank_name");
-                final Element bank_path = document.createElement("bank_path");
-                bank.appendChild(bank_name);
-                bank.appendChild(bank_path);
-                bank_name.appendChild(document.createTextNode(bk.getName()));
-                bank_path.appendChild(document.createTextNode(bk.getPath()));
+            for (Qcm qc:list_qcm) {
+                final Element qcm = document.createElement("qcm");
+                qcm_name_list.appendChild(qcm);
+                final Element qcm_name = document.createElement("qcm_name");
+                final Element qcm_path = document.createElement("qcm_path");
+                qcm.appendChild(qcm_name);
+                qcm.appendChild(qcm_path);
+                qcm_name.appendChild(document.createTextNode(qc.getName()));
+                qcm_path.appendChild(document.createTextNode(qc.getPath()));
             }
             Calendar c = Calendar.getInstance();
             final Element date = document.createElement("date");
@@ -110,17 +108,14 @@ public class BankStorage{
     }
 
 
-    public void addBank(Bank bk_0){
-        list_bank.add(bk_0);
+    public void addQcm(Qcm qc_0){
+        list_qcm.add(qc_0);
     }
 
 
-    public void deleteBank(Bank bk_0){
-        list_bank.remove(bk_0);
+    public void deleteQcm(Qcm qc_0){
+        list_qcm.remove(qc_0);
     }
-
-
-
 
 
 
